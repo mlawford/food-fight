@@ -1,0 +1,6 @@
+<%= form_for @review do |f|%>
+
+Restaurant: <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name%> <br>
+Content: <%= f.text_area :content %>
+<%= f.submit "Add Review" %>
+<% end %>
