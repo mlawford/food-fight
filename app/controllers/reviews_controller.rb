@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.user = User.find(session[:user_id])
     @review.save
-    
+
     redirect_to review_path(@review)
   end
 
