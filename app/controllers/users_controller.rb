@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-
+  # before_action :logged_in
+  # skip_before_action :logged_in, only: [:new]
   def new
     @user = User.new
   end
@@ -8,14 +9,14 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:id] = @user.id
-       redirect_to '/home'
+       redirect_to '/application/home'
      else
        redirect_to '/user/new'
      end
   end
 
-  def home
-
+  def show
+    @user = User.find(params[:id])
   end
 
 
@@ -25,6 +26,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name,:bio,:EXP,:favorite_food,:password,:password_confirmation)
+  end
+
+  def logged_in
+     return head(:forbidden) unless session.include? :name
   end
 
 
