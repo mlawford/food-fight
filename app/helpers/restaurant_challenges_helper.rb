@@ -1,0 +1,2 @@
+module RestaurantChallengesHelper
+end
