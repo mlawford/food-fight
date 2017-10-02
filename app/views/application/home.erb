@@ -1,5 +1,19 @@
 <h1>THIS IS THE HOME PAGE </h1> <br>
+<h1><%="This Week's Challenge: " %> <%=Challenge.last.description%></h2>
 
+    Restaurant List: <%Challenge.last.restaurants.each do |restaurant|%>
+    <%=restaurant.name%>
+    <%end%><br>
+     Participants: <%Challenge.last.users.each do |user|%>
+    <li><%=user.name%></li>
+    <%end%>
+    <!-- <%= button_to "Join Challenge", {:controller => :users} %> -->
+
+    <%= button_to "Join Challenge", {:controller => :users,
+          :action => 'join_challenge'}, :method => :post %>
+
+<br>
+<br>
 <%=link_to "Restaurants",'/restaurants'%><br>
 <%=link_to "Your Profile","/users/#{@user.id}"%><br>
 <%=link_to "Create a Review","/reviews/new"%><br>
