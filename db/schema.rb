@@ -10,28 +10,65 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20171002142746) do
 
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
     t.string "cuisine"
+=======
+ActiveRecord::Schema.define(version: 20171002143119) do
+
+  create_table "challenges", force: :cascade do |t|
+    t.datetime "start"
+    t.datetime "end"
+    t.string "description"
+    t.integer "reward"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "restaurant_challenges", force: :cascade do |t|
+    t.integer "restaurant_id"
+    t.integer "challenge_id"
+>>>>>>> 4920866fcc1bc96a94e8fa920fd6de3a8ae4a199
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+<<<<<<< HEAD
   create_table "reviews", force: :cascade do |t|
     t.integer "user_id"
     t.integer "restaurant_id"
     t.text "content"
+=======
+  create_table "results", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "review_id"
+    t.integer "restaurant_id"
+    t.integer "challenge_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_challenges", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "challenge_id"
+>>>>>>> 4920866fcc1bc96a94e8fa920fd6de3a8ae4a199
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
+<<<<<<< HEAD
     t.string "bio"
     t.integer "EXP"
     t.string "favorite_food"
+=======
+    t.text "bio"
+    t.integer "EXP"
+>>>>>>> 4920866fcc1bc96a94e8fa920fd6de3a8ae4a199
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
