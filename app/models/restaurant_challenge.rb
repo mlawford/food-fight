@@ -1,0 +1,2 @@
+class RestaurantChallenge < ApplicationRecord
+end
