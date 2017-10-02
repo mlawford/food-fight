@@ -1,0 +1,8 @@
+<h1>Restaurant Reviews</h1>
+
+<% @reviews.each do |r| %>
+
+<h2> <%= r.restaurant.name %> </h2>
+<p><%= r.content %> </p><br>
+By <%= r.user.name %>
+<%end%>
