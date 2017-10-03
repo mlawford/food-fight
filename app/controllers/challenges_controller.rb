@@ -17,20 +17,6 @@ class ChallengesController < ApplicationController
     @challenge = Challenge.find(params[:id])
   end
 
-  def end_challenge
-    # check timer
-    #end challenge
-    #tally user reviews for the week
-    #dsitribute points to winner
-    #destroy challenge
-  end
-
-  def timer
-    @challenge = Challenge.last
-    Time.now > @challenge.end
-  end
-
-
   private
 
   def challenge_params

@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       session[:id] = @user.id
        redirect_to '/home'
      else
-       redirect_to '/user/new'
+       render :new
      end
   end
 
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   end
 
   def join_challenge
-    @user = User.find(session[:user_id])
+    @user = User.find(session[:id])
     @current_challenge = Challenge.last
     if @current_challenge.users.include?(@user)
       redirect_to '/home'
