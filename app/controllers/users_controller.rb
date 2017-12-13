@@ -72,6 +72,9 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name,:bio,:EXP,:favorite_food,:password,:password_confirmation)
   end
 
+  def logged_in
+     redirect_to'/' unless session.include? :id
+  end
 
 
 end
