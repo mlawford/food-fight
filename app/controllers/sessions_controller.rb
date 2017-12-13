@@ -5,12 +5,5 @@ class SessionsController < ApplicationController
     # session[:user_id] = @user.id
     @user = User.find_by(name: "Demo User")
     session[:user_id] = @user.id
-
   end
-
-  def
-
-
-
-
 end
