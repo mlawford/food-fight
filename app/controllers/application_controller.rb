@@ -10,13 +10,17 @@ class ApplicationController < ActionController::Base
   end
 
   def log_user_in
-    @user = User.find_by(name: params[:name])
-    if @user.authenticate(params[:password])
-        session[:id] = @user.id
-        redirect_to '/home'
-    else
-      redirect_to '/login'
-    end
+    # COMMENTED OUT FOR DEMO
+    # @user = User.find_by(name: params[:name])
+    # if @user.authenticate(params[:password])
+    #     session[:id] = @user.id
+    #     redirect_to '/home'
+    # else
+    #   redirect_to '/login'
+    # end
+
+    @user = User.find_by(name: "Demo User")
+    redirect_to '/home'
   end
 
   def home
