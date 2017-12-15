@@ -8,3 +8,4 @@
 
 
 User.create({name: "Demo", bio: "This is the demo!",favorite_food:"Demo Dog" })
+Restaurant.create_5_restaurants

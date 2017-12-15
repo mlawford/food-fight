@@ -21,14 +21,14 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = User.find_by(name: "Demo")
     if @user.id != session[:id]
       redirect_to '/home'
     end
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = User.find_by(name: "Demo")
     @user.update(user_params)
     if @user.valid?
       @user.save
@@ -50,11 +50,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by(name: "Demo")
   end
 
   def join_challenge
-    @user = User.find(session[:id])
+    @user = User.find_by(name: "Demo")
     @current_challenge = Challenge.last
     if @current_challenge.users.include?(@user)
       redirect_to '/home'
