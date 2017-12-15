@@ -94,7 +94,7 @@ OptionParser.new do |opts|
     puts opts
     exit
   end
-end.parse!
+end
 
 
 command = ARGV
