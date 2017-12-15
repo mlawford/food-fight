@@ -45,7 +45,7 @@ class UsersController < ApplicationController
       @users = Challenge.last.users.sort_by{|user| user.reviews.length}.reverse
     end
 
-    @user = User.find(session[:id])
+    @user = User.find_by(name: "Demo")
 
   end
 
