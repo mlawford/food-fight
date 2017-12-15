@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
     #   redirect_to '/login'
     # end
 
-    @user = User.find_by(name: "Demo User")
+    @user = User.find_by(name: "Demo")
     redirect_to '/home'
   end
 
