@@ -7,4 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.create({name: "Demo", bio: "This is the demo!", exp: 0,favorite_food:"Demo Dog" })
+User.create({name: "Demo", bio: "This is the demo!",favorite_food:"Demo Dog" })
